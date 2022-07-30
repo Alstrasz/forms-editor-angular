@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component( {
     selector: 'forms-scene-tabs',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./tabs.component.scss'],
 } )
 export class TabsComponent implements OnInit {
+    @Input() from_id!: number;
+
     constructor () { }
 
     ngOnInit (): void {

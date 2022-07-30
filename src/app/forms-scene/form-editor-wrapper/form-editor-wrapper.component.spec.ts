@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SelectorComponent } from './selector.component';
+import { FormEditorWrapperComponent } from './form-editor-wrapper.component';
 
-describe( 'SelectorComponent', () => {
-    let component: SelectorComponent;
-    let fixture: ComponentFixture<SelectorComponent>;
+describe( 'FormEditorWrapperComponent', () => {
+    let component: FormEditorWrapperComponent;
+    let fixture: ComponentFixture<FormEditorWrapperComponent>;
 
     beforeEach( async () => {
         await TestBed.configureTestingModule( {
-            declarations: [SelectorComponent],
+            declarations: [FormEditorWrapperComponent],
         } )
             .compileComponents();
 
-        fixture = TestBed.createComponent( SelectorComponent );
+        fixture = TestBed.createComponent( FormEditorWrapperComponent );
         component = fixture.componentInstance;
         fixture.detectChanges();
     } );
