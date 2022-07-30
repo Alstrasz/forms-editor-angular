@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component( {
-    selector: 'app-window',
+    selector: 'form-editor-window',
     templateUrl: './window.component.html',
     styleUrls: ['./window.component.scss'],
 } )

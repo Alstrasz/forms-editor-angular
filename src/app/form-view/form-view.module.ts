@@ -26,5 +26,9 @@ import { SubmittedComponent } from './submitted/submitted.component';
     imports: [
         CommonModule,
     ],
+    exports: [
+        LoaderComponent,
+        WindowComponent,
+    ],
 } )
 export class FormViewModule { }

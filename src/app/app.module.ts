@@ -3,24 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WindowComponent } from './form-view/window/window.component';
-import { LoaderComponent } from './form-view/loader/loader.component';
-import { HeaderComponent } from './form-collection/header/header.component';
-import { SubmitComponent } from './form-collection/submit/submit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormViewModule } from './form-view/form-view.module';
+import { FormsSceneModule } from './forms-scene/forms-scene.module';
 
 @NgModule( {
     declarations: [
         AppComponent,
-        WindowComponent,
-        LoaderComponent,
-        HeaderComponent,
-        SubmitComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
+        FormViewModule,
+        FormsSceneModule,
     ],
     providers: [],
     bootstrap: [AppComponent],

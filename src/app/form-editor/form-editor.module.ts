@@ -7,6 +7,7 @@ import { FieldInputComponent } from './field-input/field-input.component';
 import { FieldsCollectionComponent } from './fields-collection/fields-collection.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { NewFieldComponent } from './new-field/new-field.component';
 
 
 @NgModule( {
@@ -18,9 +19,13 @@ import { FooterComponent } from './footer/footer.component';
         FieldsCollectionComponent,
         HeaderComponent,
         FooterComponent,
+        NewFieldComponent,
     ],
     imports: [
         CommonModule,
+    ],
+    exports: [
+        WindowComponent,
     ],
 } )
 export class FormEditorModule { }

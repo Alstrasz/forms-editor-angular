@@ -14,5 +14,8 @@ import { ResponseBoxComponent } from './response-box/response-box.component';
     imports: [
         CommonModule,
     ],
+    exports: [
+        WindowComponent,
+    ],
 } )
 export class FormResponsesModule { }

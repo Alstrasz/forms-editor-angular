@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
-@Component({
-  selector: 'app-submitted',
-  templateUrl: './submitted.component.html',
-  styleUrls: ['./submitted.component.scss']
-})
+@Component( {
+    selector: 'form-view-submitted',
+    templateUrl: './submitted.component.html',
+    styleUrls: ['./submitted.component.scss'],
+} )
 export class SubmittedComponent implements OnInit {
+    constructor () { }
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+    ngOnInit (): void {
+    }
 }
