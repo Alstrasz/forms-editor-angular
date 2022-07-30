@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
     styleUrls: ['./window.component.scss'],
 } )
 export class WindowComponent implements OnInit {
-    @Input() from_id!: number;
+    @Input() form_id!: number;
 
     constructor () { }
 

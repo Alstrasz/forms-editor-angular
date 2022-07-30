@@ -20,6 +20,10 @@ export class WindowComponent implements OnInit {
     }
 
     create_new_form () {
-        this.dialog.open( FormEditorWrapperComponent, { width: '90%', position: { top: '10%' } } );
+        this.dialog.open( FormEditorWrapperComponent, {
+            width: '90%',
+            position: { top: '5vh' },
+            maxHeight: '90vh',
+        } );
     }
 }

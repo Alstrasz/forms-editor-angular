@@ -18,7 +18,7 @@
             <span>My Application</span>
         </mat-toolbar>
         <ng-container *ngIf="forms.selectedOptions.selected[0]?.value">
-            <forms-scene-tabs [from_id]="forms.selectedOptions.selected[0]?.value"></forms-scene-tabs>
+            <forms-scene-tabs [form_id]="forms.selectedOptions.selected[0]?.value"></forms-scene-tabs>
         </ng-container>
         <ng-container *ngIf="!forms.selectedOptions.selected[0]?.value">
             <p class="attention_text">Please, select or create form to view in left side menu</p>

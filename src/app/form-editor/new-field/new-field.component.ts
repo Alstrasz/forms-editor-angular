@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormField } from 'src/app/types/from_field';
 
 @Component( {
     selector: 'form-editor-new-field',
@@ -6,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./new-field.component.scss'],
 } )
 export class NewFieldComponent implements OnInit {
+    @Output() field_creation: EventEmitter<FormField['type']> = new EventEmitter();
+
     constructor () { }
 
     ngOnInit (): void {
+    }
+
+    click ( type: FormField['type'] ) {
+        this.field_creation.emit( type );
     }
 }

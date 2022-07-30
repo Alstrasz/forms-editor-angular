@@ -8,6 +8,13 @@ import { FieldsCollectionComponent } from './fields-collection/fields-collection
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NewFieldComponent } from './new-field/new-field.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatListModule } from '@angular/material/list';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule( {
@@ -23,6 +30,13 @@ import { NewFieldComponent } from './new-field/new-field.component';
     ],
     imports: [
         CommonModule,
+        MatCardModule,
+        FormsModule,
+        MatInputModule,
+        MatButtonModule,
+        MatListModule,
+        MatIconModule,
+        MatTooltipModule,
     ],
     exports: [
         WindowComponent,

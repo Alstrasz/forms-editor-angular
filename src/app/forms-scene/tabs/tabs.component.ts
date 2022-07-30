@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
     styleUrls: ['./tabs.component.scss'],
 } )
 export class TabsComponent implements OnInit {
-    @Input() from_id!: number;
+    @Input() form_id!: number;
 
     constructor () { }
 

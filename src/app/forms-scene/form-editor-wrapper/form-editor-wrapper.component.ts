@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component( {
     selector: 'forms-scene-form-editor-wrapper',
@@ -6,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./form-editor-wrapper.component.scss'],
 } )
 export class FormEditorWrapperComponent implements OnInit {
-    constructor () { }
+    constructor ( public dialogRef: MatDialogRef<FormEditorWrapperComponent> ) { }
 
     ngOnInit (): void {
+    }
+
+    close () {
+        this.dialogRef.close();
     }
 }
