@@ -1,27 +1,31 @@
-# FromsEditorAngular
+# Description
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1.
+This is a smiple project to pass entry test. It provides simpe version of google forms.
 
-## Development server
+Description can be found at https://docs.google.com/document/d/1thnUjX5iTPWBwWXx0y-7rEN5Yw9glGC6U5_OIVL0MiM/edit?usp=sharing
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Related projects: https://github.com/Alstrasz/forms-editor-angular
 
-## Code scaffolding
+# Used technologies
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular used as frontend framework
 
-## Build
+- Styles and many components take from Angular Material
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# How to run
 
-## Running unit tests
+## With node
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+For prod version:
 
-## Running end-to-end tests
+From root
+- ```npm i```
+- ```npm run build```
+- ```npm start```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+For dev version:
 
-## Further help
+From root
+- ```npm i```
+- ```npm run start:watch```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
