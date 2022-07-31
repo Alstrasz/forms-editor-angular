@@ -12,6 +12,13 @@
     font-size: large;
 }
 
-.side-bar {
-    overflow-x: scroll;
+.side {
+    width: 12%;
+}
+
+.button-container {
+    padding-top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }

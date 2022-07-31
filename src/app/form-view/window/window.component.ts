@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import * as _ from 'lodash';
 import { FormFieldResponse } from 'src/app/types/form_field_response';
 import { Form } from '../../types/form';
+import { FormViewService } from '../form-view.service';
 
 @Component( {
     selector: 'form-view-window',
@@ -10,44 +12,29 @@ import { Form } from '../../types/form';
 export class WindowComponent implements OnInit {
     @Input() form_id!: number;
     form: Form = {
-        id: 1,
-        name: '12123123',
-        description: '213123123123213',
-        created_at: new Date(),
-        fields: [
-            {
-                name: 'qq',
-                description: '123123123123123123123',
-                type: 'textarea',
-            },
-            {
-                name: '123312',
-                description: '123123123123123',
-                type: 'select',
-                options: [
-                    '12123123123',
-                    '123123132123',
-                    '312123123213',
-                    '213123123213',
-                ],
-            },
-            {
-                name: '23112312321321',
-                description: '213123213231123123123123123',
-                type: 'input',
-            },
-        ],
+        id: -1,
+        name: '',
+        description: '',
+        created_at: new Date( 0 ),
+        fields: [],
     };
 
-    constructor () { }
+    submitted: boolean = false;
+
+    constructor ( private form_view_service: FormViewService ) { }
 
     ngOnInit (): void {
         if ( this.form_id == undefined ) {
             throw new Error( 'WindowComponent: form id undefined' );
         }
+        this.form_view_service.get_form_by_id( this.form_id ).then( ( val ) => {
+            this.form = val;
+        } );
     }
 
     form_response ( data: Array<FormFieldResponse> ) {
-        console.log( data );
+        this.form_view_service.submit_form( data, this.form.id ).then( () => {
+            this.submitted = true;
+        } );
     }
 }

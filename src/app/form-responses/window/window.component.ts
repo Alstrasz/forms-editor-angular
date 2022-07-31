@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormResponse } from 'src/app/types/form_response';
+import { FormResponsesService } from '../form-responses.service';
 
 @Component( {
     selector: 'form-responses-window',
@@ -8,45 +9,16 @@ import { FormResponse } from 'src/app/types/form_response';
 } )
 export class WindowComponent implements OnInit {
     @Input() form_id!: number;
-    responses: Array<FormResponse> = [
-        {
-            created_at: new Date(),
-            fields: [
-                {
-                    'name': 'qq',
-                    'data': '1',
-                },
-                {
-                    'name': '123312',
-                    'data': '12123123123',
-                },
-                {
-                    'name': '23112312321321',
-                    'data': '12',
-                },
-            ],
-        },
-        {
-            created_at: new Date(),
-            fields: [
-                {
-                    'name': 'q123q',
-                    'data': '112',
-                },
-                {
-                    'name': '123312',
-                    'data': '12123123123',
-                },
-                {
-                    'name': '23112312321321',
-                    'data': '12',
-                },
-            ],
-        },
-    ];
+    responses: Array<FormResponse> = [];
 
-    constructor () { }
+    constructor ( private form_responses_service: FormResponsesService ) { }
 
     ngOnInit (): void {
+        if ( this.form_id == undefined ) {
+            throw new Error( 'Form id undefined' );
+        }
+        this.form_responses_service.get_responses_by_form_id( this.form_id ).then( ( val ) => {
+            this.responses = val;
+        } );
     }
 }

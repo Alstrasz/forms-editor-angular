@@ -15,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatListModule } from '@angular/material/list';
 import { FormsModule } from '@angular/forms';
+import { FormEditorService } from './form-editor.service';
 
 
 @NgModule( {
@@ -40,6 +41,9 @@ import { FormsModule } from '@angular/forms';
     ],
     exports: [
         WindowComponent,
+    ],
+    providers: [
+        FormEditorService,
     ],
 } )
 export class FormEditorModule { }

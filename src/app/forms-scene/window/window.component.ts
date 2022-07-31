@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { lastValueFrom } from 'rxjs';
 import { FormDescriptionShort } from 'src/app/types/form_description_short';
 import { FormEditorWrapperComponent } from '../form-editor-wrapper/form-editor-wrapper.component';
+import { FormsSceneService } from '../forms-scene.service';
 
 @Component( {
     selector: 'forms-scene-window',
@@ -9,21 +11,38 @@ import { FormEditorWrapperComponent } from '../form-editor-wrapper/form-editor-w
     styleUrls: ['./window.component.scss'],
 } )
 export class WindowComponent implements OnInit {
-    forms_list_short: Array<FormDescriptionShort> = [
-        { id: 1, name: 'a', description: 'b' },
-        { id: 2, name: 'c', description: 'd' },
-    ];
+    forms_list_short: Array<FormDescriptionShort> = [];
 
-    constructor ( public dialog: MatDialog ) { }
+    selected_id: number | undefined = 0;
+
+    constructor (
+        private dialog: MatDialog,
+        private forms_scene_service: FormsSceneService,
+    ) { }
 
     ngOnInit (): void {
+        this.forms_scene_service.get_froms_short().then( ( val ) => {
+            this.forms_list_short = val;
+        } );
     }
 
     create_new_form () {
-        this.dialog.open( FormEditorWrapperComponent, {
+        lastValueFrom( this.dialog.open( FormEditorWrapperComponent, {
             width: '90%',
             position: { top: '5vh' },
             maxHeight: '90vh',
+        } ).afterClosed() ).then( () => {
+            this.forms_scene_service.get_froms_short().then( ( val ) => {
+                this.forms_list_short = val;
+            } );
         } );
+    }
+
+    selection_change ( val: number | undefined ) {
+        // Trick to rerender form view
+        this.selected_id = undefined;
+        setTimeout( () => {
+            this.selected_id = val;
+        }, 1 );
     }
 }

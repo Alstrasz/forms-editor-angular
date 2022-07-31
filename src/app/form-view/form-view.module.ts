@@ -18,6 +18,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatRadioModule } from '@angular/material/radio';
 import { FormsModule } from '@angular/forms';
+import { FormViewService } from './form-view.service';
 
 
 @NgModule( {
@@ -47,6 +48,9 @@ import { FormsModule } from '@angular/forms';
     exports: [
         LoaderComponent,
         WindowComponent,
+    ],
+    providers: [
+        FormViewService,
     ],
 } )
 export class FormViewModule { }

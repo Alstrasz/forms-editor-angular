@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormField } from 'src/app/types/form_field';
-
+import { CreateFormDto } from 'src/app/types/create_form_dto';
+import { FormEditorService } from '../form-editor.service';
 @Component( {
     selector: 'form-editor-window',
     templateUrl: './window.component.html',
@@ -11,17 +11,13 @@ export class WindowComponent implements OnInit {
 
     @Output() close_request: EventEmitter<void> = new EventEmitter();
 
-    form: {
-        name: string,
-        description: string,
-        fields: Array<FormField>,
-    } = {
-            name: '',
-            description: '',
-            fields: [],
-        };
+    form: CreateFormDto = {
+        name: '',
+        description: '',
+        fields: [],
+    };
 
-    constructor () { }
+    constructor ( private form_editor_service: FormEditorService ) { }
 
     ngOnInit (): void {
     }
@@ -31,6 +27,8 @@ export class WindowComponent implements OnInit {
     }
 
     create_form () {
-        console.log( this.form );
+        this.form_editor_service.create_form( this.form ).then( () => {
+            this.close_editor();
+        } );
     }
 }

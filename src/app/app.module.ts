@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormViewModule } from './form-view/form-view.module';
 import { FormsSceneModule } from './forms-scene/forms-scene.module';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule( {
     declarations: [
@@ -17,6 +18,7 @@ import { FormsSceneModule } from './forms-scene/forms-scene.module';
         BrowserAnimationsModule,
         FormViewModule,
         FormsSceneModule,
+        MatSnackBarModule,
     ],
     providers: [],
     bootstrap: [AppComponent],

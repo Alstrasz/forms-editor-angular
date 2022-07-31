@@ -5,6 +5,7 @@ import { ResponsesCollectionComponent } from './responses-collection/responses-c
 import { ResponseBoxComponent } from './response-box/response-box.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
+import { FormResponsesService } from './form-responses.service';
 
 
 @NgModule( {
@@ -20,6 +21,9 @@ import { MatCardModule } from '@angular/material/card';
     ],
     exports: [
         WindowComponent,
+    ],
+    providers: [
+        FormResponsesService,
     ],
 } )
 export class FormResponsesModule { }

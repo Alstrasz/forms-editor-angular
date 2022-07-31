@@ -13,6 +13,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormEditorWrapperComponent } from './form-editor-wrapper/form-editor-wrapper.component';
+import { FormsSceneService } from './forms-scene.service';
 
 
 @NgModule( {
@@ -36,6 +37,9 @@ import { FormEditorWrapperComponent } from './form-editor-wrapper/form-editor-wr
     ],
     exports: [
         WindowComponent,
+    ],
+    providers: [
+        FormsSceneService,
     ],
 } )
 export class FormsSceneModule { }
