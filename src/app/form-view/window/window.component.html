@@ -1,3 +1,3 @@
-<form-view-header [name]="form.name" [description]="form.description"></form-view-header>
+<form-view-header [name]="form.name" [description]="form.description" [created_at]="form.created_at" [id]="form_id"></form-view-header>
 <form-view-fields-collection [fields]="form.fields" #fields></form-view-fields-collection>
 <form-view-footer [closable]="false" (create_request)="form_response(fields.responses)"></form-view-footer>

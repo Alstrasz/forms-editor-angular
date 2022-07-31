@@ -4,7 +4,7 @@
             Forms
         </mat-toolbar>
         <button mat-raised-button color="accent" (click)="create_new_form()">Create new</button>
-        <mat-selection-list #forms [multiple]="false">
+        <mat-selection-list #forms [multiple]="false" class="side-bar">
             <mat-list-option *ngFor="let form of forms_list_short" [value]="form.id">
                 {{form.name}}
             </mat-list-option>

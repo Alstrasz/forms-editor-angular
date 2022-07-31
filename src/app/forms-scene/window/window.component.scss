@@ -4,9 +4,14 @@
     bottom: 0;
     left: 0;
     right: 0;
+    max-height: 100vh;
 }
 
 .attention_text {
     text-align: center;
     font-size: large;
+}
+
+.side-bar {
+    overflow-x: scroll;
 }
