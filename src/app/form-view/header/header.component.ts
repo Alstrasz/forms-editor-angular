@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component( {
     selector: 'form-view-header',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./header.component.scss'],
 } )
 export class HeaderComponent implements OnInit {
+    @Input() name: string = '';
+    @Input() description: string = '';
+
     constructor () { }
 
     ngOnInit (): void {

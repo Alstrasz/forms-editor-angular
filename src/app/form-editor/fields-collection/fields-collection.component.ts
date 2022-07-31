@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormField } from 'src/app/types/from_field';
+import { FormField } from 'src/app/types/form_field';
 
 @Component( {
     selector: 'form-editor-fields-collection',

@@ -4,23 +4,32 @@
             <mat-label>Name</mat-label>
             <input matInput placeholder="Suggest a book" [(ngModel)]="name" (ngModelChange)="name_update($event)">
         </mat-form-field>
-        <mat-form-field class="input-placeholder" appearance="fill">
-            <mat-label>Position preview</mat-label>
-            <input matInput disabled>
-        </mat-form-field>
+        
         <button mat-icon-button class="example-icon" matTooltip="Delete form field" (click)="close_click()">
             <mat-icon>delete</mat-icon>
         </button>
     </mat-card-title>
+    <mat-divider></mat-divider>
     <mat-card-content>
-        <mat-form-field class="description-textarea" appearance="fill">
-            <mat-label>Description</mat-label>
-            <textarea 
-                matInput 
-                placeholder="Here you can type any book name if your's not on the list below" 
-                [(ngModel)]="description" 
-                (ngModelChange)="description_update($event)"
-            ></textarea>
-        </mat-form-field>
+        <div class="container-wrapper">
+            <div class="container">
+                <mat-form-field class="description-textarea" appearance="fill">
+                    <mat-label>Description</mat-label>
+                    <textarea 
+                        matInput 
+                        placeholder="Here you can type any book name if your's not on the list below" 
+                        [(ngModel)]="description" 
+                        (ngModelChange)="description_update($event)"
+                    ></textarea>
+                </mat-form-field>
+            </div>
+            <mat-divider [vertical]="true"></mat-divider>
+            <div class="container">
+                <mat-form-field class="input-placeholder" appearance="fill">
+                    <mat-label>Position preview</mat-label>
+                    <input matInput disabled>
+                </mat-form-field>
+            </div>
+        </div>
     </mat-card-content>
 </mat-card>

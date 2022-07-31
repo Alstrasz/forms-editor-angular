@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { FormDescriptionShort } from 'src/app/types/from_description_short';
+import { FormDescriptionShort } from 'src/app/types/form_description_short';
 import { FormEditorWrapperComponent } from '../form-editor-wrapper/form-editor-wrapper.component';
 
 @Component( {

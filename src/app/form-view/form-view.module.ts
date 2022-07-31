@@ -9,6 +9,15 @@ import { FieldsCollectionComponent } from './fields-collection/fields-collection
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SubmittedComponent } from './submitted/submitted.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatRadioModule } from '@angular/material/radio';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule( {
@@ -25,6 +34,15 @@ import { SubmittedComponent } from './submitted/submitted.component';
     ],
     imports: [
         CommonModule,
+        MatCardModule,
+        MatInputModule,
+        MatButtonModule,
+        MatIconModule,
+        MatTooltipModule,
+        MatListModule,
+        MatDividerModule,
+        MatRadioModule,
+        FormsModule,
     ],
     exports: [
         LoaderComponent,

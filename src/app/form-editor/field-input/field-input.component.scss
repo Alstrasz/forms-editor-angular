@@ -1,5 +1,5 @@
 .description-textarea {
-    width: 100%;
+    width: 80%;
     font-size: 12pt;
 }
 
@@ -10,10 +10,18 @@
 
 .input-placeholder {
     font-size: 12pt;
-    width: 40%;
-    margin-left: auto;
 }
 
 .card-title {
     display: flex;
+}
+
+.container-wrapper {
+    padding-top: 0.25rem;
+    display: flex;
+}
+
+.container {
+    flex-basis: 100%;
+    margin: 0.25rem;
 }
