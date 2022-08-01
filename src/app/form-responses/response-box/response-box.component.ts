@@ -10,7 +10,7 @@ export class ResponseBoxComponent implements OnInit {
     @Input() response!: FormResponse;
     @Input() name: string = '';
 
-    displayed_columns = ['name', 'data'];
+    displayed_columns = ['index', 'name', 'data'];
 
     constructor () { }
 
