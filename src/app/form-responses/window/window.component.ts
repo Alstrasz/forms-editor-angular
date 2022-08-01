@@ -10,6 +10,7 @@ import { FormResponsesService } from '../form-responses.service';
 export class WindowComponent implements OnInit {
     @Input() form_id!: number;
     responses: Array<FormResponse> = [];
+    loading: boolean = true;
 
     constructor ( private form_responses_service: FormResponsesService ) { }
 
@@ -17,8 +18,12 @@ export class WindowComponent implements OnInit {
         if ( this.form_id == undefined ) {
             throw new Error( 'Form id undefined' );
         }
-        this.form_responses_service.get_responses_by_form_id( this.form_id ).then( ( val ) => {
-            this.responses = val;
-        } );
+        this.form_responses_service.get_responses_by_form_id( this.form_id )
+            .then( ( val ) => {
+                this.responses = val;
+            } )
+            .finally( () => {
+                this.loading = false;
+            } ); ;
     }
 }

@@ -18,6 +18,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatRadioModule } from '@angular/material/radio';
 import { FormsModule } from '@angular/forms';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FormViewService } from './form-view.service';
 
 
@@ -43,6 +44,7 @@ import { FormViewService } from './form-view.service';
         MatListModule,
         MatDividerModule,
         MatRadioModule,
+        MatProgressSpinnerModule,
         FormsModule,
     ],
     exports: [

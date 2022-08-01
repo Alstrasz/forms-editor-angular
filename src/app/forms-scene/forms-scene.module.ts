@@ -13,6 +13,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormEditorWrapperComponent } from './form-editor-wrapper/form-editor-wrapper.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FormsSceneService } from './forms-scene.service';
 
 
@@ -34,6 +35,7 @@ import { FormsSceneService } from './forms-scene.service';
         MatListModule,
         MatTabsModule,
         MatDialogModule,
+        MatProgressSpinnerModule,
     ],
     exports: [
         WindowComponent,

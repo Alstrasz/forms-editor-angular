@@ -10,6 +10,7 @@ import { FormViewService } from '../form-view.service';
     styleUrls: ['./window.component.scss'],
 } )
 export class WindowComponent implements OnInit {
+    loading: boolean = true;
     @Input() form_id!: number;
     form: Form = {
         id: -1,
@@ -27,9 +28,13 @@ export class WindowComponent implements OnInit {
         if ( this.form_id == undefined ) {
             throw new Error( 'WindowComponent: form id undefined' );
         }
-        this.form_view_service.get_form_by_id( this.form_id ).then( ( val ) => {
-            this.form = val;
-        } );
+        this.form_view_service.get_form_by_id( this.form_id )
+            .then( ( val ) => {
+                this.form = val;
+            } )
+            .finally( () => {
+                this.loading = false;
+            } ); ;
     }
 
     form_response ( data: Array<FormFieldResponse> ) {

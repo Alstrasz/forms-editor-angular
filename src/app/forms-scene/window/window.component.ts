@@ -12,6 +12,7 @@ import { FormsSceneService } from '../forms-scene.service';
 } )
 export class WindowComponent implements OnInit {
     forms_list_short: Array<FormDescriptionShort> = [];
+    loading: boolean = true;
 
     selected_id: number | undefined = 0;
 
@@ -21,9 +22,13 @@ export class WindowComponent implements OnInit {
     ) { }
 
     ngOnInit (): void {
-        this.forms_scene_service.get_froms_short().then( ( val ) => {
-            this.forms_list_short = val;
-        } );
+        this.forms_scene_service.get_froms_short()
+            .then( ( val ) => {
+                this.forms_list_short = val;
+            } )
+            .finally( () => {
+                this.loading = false;
+            } );
     }
 
     create_new_form () {

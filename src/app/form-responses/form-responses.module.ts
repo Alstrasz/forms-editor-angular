@@ -5,6 +5,7 @@ import { ResponsesCollectionComponent } from './responses-collection/responses-c
 import { ResponseBoxComponent } from './response-box/response-box.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FormResponsesService } from './form-responses.service';
 
 
@@ -18,6 +19,7 @@ import { FormResponsesService } from './form-responses.service';
         CommonModule,
         MatTableModule,
         MatCardModule,
+        MatProgressSpinnerModule,
     ],
     exports: [
         WindowComponent,
